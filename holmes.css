@@ -65,9 +65,7 @@
 }
 
 .holmes-debug a[href="#"],
-.holmes-debug a[href^="javascript"],
-.holmes-debug a:not([title]),
-.holmes-debug a[title=""]{
+.holmes-debug a[href^="javascript"] {
 	outline: 2px solid #fd0;
 }
 
@@ -81,6 +79,7 @@
 .holmes-debug img[alt=""] {
 	outline: 2px solid red;
 }
+
 /*************************
 	MISC ATTRIBUTES
 **************************/
@@ -107,6 +106,7 @@
 .holmes-debug table[summary=""]{
 	outline: 2px solid red;
 }
+
 /* 
 	Warnings here, for inline styles and event calls, 
 	ideally they should be external (CSS) and JS applied by JS scripts,
@@ -186,8 +186,6 @@ body.holmes-debug[leftmargin] {
 /* - LINKS - */
 .holmes-debug a[href="#"]:hover::after,
 .holmes-debug a[href^="javascript"]:hover::after,
-.holmes-debug a:not([title]):hover::after,
-.holmes-debug a[title=""]:hover::after,
 
 /* - EMPTY ELEMENTS - */
 .holmes-debug div:empty:hover::after, 
@@ -344,12 +342,6 @@ body.holmes-debug[leftmargin]:hover::after {
 .holmes-debug a[href^="javascript"]:hover:after{
 	content:'Href has javascript';
 }
-
-.holmes-debug a:not([title]):hover::after,
-.holmes-debug a[title=""]:hover::after {
-	content:'Missing title attribute';
-}
-
 
 /**************
 	IMAGES 
