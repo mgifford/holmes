@@ -33,9 +33,10 @@
 *
 *	Debug colours and what they mean
 *
-*	- RED 			denotes an error, invalid markup or a missing attribute
-*	- YELLOW 		denotes a warning, so potentionally erroneous markup or bad practice
-*	- DARK GREY		denotes a deprecated element or element with deprecated or Non-W3C attributes
+*	- RED 			an error, invalid markup or a missing attribute
+*	- YELLOW 		a warning, so potentionally erroneous markup or bad practice
+*	- DARK GREY		a deprecated element or element with deprecated or Non-W3C attributes
+*       - GREEN			good things that are invisible but nice to point out 
 *
 *	-------------------------
 *
@@ -83,6 +84,10 @@
 /*************************
 	MISC ATTRIBUTES
 **************************/
+
+.holmes-debug abbr {
+        outline: 1px solid green;
+} 
 
 .holmes-debug label:not([for]),
 .holmes-debug label[for=""],
@@ -254,6 +259,21 @@ body.holmes-debug[leftmargin] {
 	top: 0px;
 	z-index: 9999;
 	text-decoration: none;
+}
+
+.holmes-debug abbr:hover::after,
+.holmes-debug abbr:hover::after{
+        border-radius: 0.5em;
+        display:block;
+        padding: 1em;
+        margin: 1em;
+        background: green;
+        position: fixed;
+        color: #000;
+        left: 0px;
+        top: 0px;
+        z-index: 9999;
+        text-decoration: none;
 }
 
 /* ===================== */
@@ -449,4 +469,12 @@ body.holmes-debug[leftmargin]:hover::after {
 .holmes-debug td:empty:hover::after, 
 .holmes-debug th:empty:hover::after {
 	content:'Empty element!';
+}
+
+
+/*********************
+        GOOD INVISIBLE ELEMENTS
+**********************/
+.holmes-debug abbr:hover::after {
+        content:'Thanks!';
 }
